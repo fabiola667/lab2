@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Mí</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(fondo.jpg);
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .grid-item {
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-item {
+                width: 90%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Acerca de Mí</h1>
+    </header>
+
+    <main>
+        <div class="grid-container">
+            <div class="grid-item" id="animal-favorito">
+                <h2>Mi Animal Favorito</h2>
+                <p>El [perro] es mi animal favorito por su [instinto de defender y cuidar a su amo].</p>
+                <img src="mascota.jpg" alt="Animal Favorito">
+            </div>
+            <div class="grid-item" id="comida-favorita">
+                <h2>Mi Comida Favorita</h2>
+                <p>Disfruto mucho de la [Las pastas] porque [es una comida lijera y no muy pesada].</p>
+                <img src="pasta1.jpg" alt="Comida Favorita">
+            </div>
+            <div class="grid-item" id="pelicula-favorita">
+                <h2>Mi Película/Serie Favorita</h2>
+                <p>Mi película/serie favorita es [culpa tuya] ya que [es una serie muy bonita ya se que se trata de romace].</p>
+                <img src="culpa tuya.jpg" alt="Película/Serie Favorita">
+            </div>
+            <div class="grid-item" id="cancion-favorita">
+                <h2>Mi Canción Favorita</h2>
+                <p>Me encanta escuchar [lo que es el genero de banda] porque [porque me gusta es tipo de genero].</p>
+                <audio controls>
+                    <source src="banda.jpg" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+            <div class="grid-item" id="persona-admirada">
+                <h2>Persona a la que Admiro</h2>
+                <p>Admiro a [mis papas] por [por ser unas personas que luchan siempre por sus metas].</p>
+            </div>
+            <div class="grid-item" id="pais-deseado">
+                <h2>País que me Gustaría Visitar</h2>
+                <p>Me encantaría visitar [Francia] porque [es un pais muy lindo y la ciudad que me gustaria ir a visitar es paris].</p>
+                <img src="" alt="País Deseado">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function mostrarMensaje(mensaje) {
+            console.log(mensaje);
+        }
+
+        const animalFavorito = document.getElementById('animal-favorito');
+        animalFavorito.addEventListener('mouseover', () => {
+            mostrarMensaje('¡Este es mi animal favorito!');
+        });
+
+        const comidaFavorita = document.getElementById('comida-favorita');
+        comidaFavorita.addEventListener('click', () => {
+            alert('¡Ñam, mi comida favorita!');
+        });
+
+        const peliculaFavorita = document.getElementById('pelicula-favorita');
+        peliculaFavorita.addEventListener('mouseout', () => {
+            mostrarMensaje('¡Deberías ver esta película!');
+        });
+
+        const cancionFavorita = document.getElementById('cancion-favorita');
+        cancionFavorita.addEventListener('dblclick', () => {
+            alert('¡Esta canción me encanta!');
+        });
+
+        const personaAdmirada = document.getElementById('persona-admirada');
+        personaAdmirada.addEventListener('contextmenu', (evento) => {
+            evento.preventDefault();
+            mostrarMensaje('¡Esta persona es increíble!');
+        });
+
+        const paisDeseado = document.getElementById('pais-deseado');
+        window.addEventListener('load', () => {
+            mostrarMensaje('¡Listo para viajar a este país!');
+        });
+    </script>
+</body>
+</html>
